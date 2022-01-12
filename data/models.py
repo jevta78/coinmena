@@ -10,5 +10,8 @@ class BtcUsd(models.Model):
     bid_price = models.FloatField()
     ask_price = models.FloatField()
 
+    class Meta:
+        ordering = ('-date',)
+
     def __str__(self):
         return f'{self.from_currency_code} / {self.to_currency_code}'
