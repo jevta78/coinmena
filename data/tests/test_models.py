@@ -7,7 +7,7 @@ class TestModels():
 
     @pytest.mark.django_db
     def test_btc_usd_model_creation(self):
-        BtcUsd.objects.create(
+        btcusd = BtcUsd.objects.create(
             from_currency_code='BTC',
             to_currency_code='USD',
             exchange_rate=45000.22,
@@ -17,3 +17,4 @@ class TestModels():
             ask_price=46666.66
         )
         assert BtcUsd.objects.count() == 1
+        assert btcusd.from_currency_code == 'BTC'
